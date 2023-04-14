@@ -14,6 +14,7 @@ public class Principal {
         try {
             //Especifica o endereço do serviço
             URL url = new URL("http://localhost:8080/MensagemServico?wsdl");
+                        
             //Valores fornecidos pela WSDL
             //1o parâmetro usar valor do atributo namespace da tag binding\operation\input\soap do wsdl
             //Classe de implementação acrescida de "service
@@ -25,12 +26,9 @@ public class Principal {
             MensagemServico mensagemServico = servico.getPort(MensagemServico.class);
 
             // Chamando os métodos remoto
-            mensagemServico.setMensagem("Teste");
-            
+            mensagemServico.setMensagem("Teste");            
             System.out.println(mensagemServico.getMensagem());
-
             
-
         } catch (MalformedURLException mue) {
             System.out.println("Excecao :" + mue.getMessage());
         }
