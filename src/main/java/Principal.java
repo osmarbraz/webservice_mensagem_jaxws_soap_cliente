@@ -12,9 +12,8 @@ public class Principal {
 
     public static void main(String[] args) {
         try {
-            //Especifica o endereço do serviço
-            URL url = new URL("http://localhost:8080/MensagemServico?wsdl");
-                        
+            //Especifica o endereço do servidor do serviço
+            URL url = new URL("http://localhost:8080/MensagemServico?wsdl");                        
             //Valores fornecidos pela WSDL
             //1o parâmetro usar valor do atributo namespace da tag binding\operation\input\soap do wsdl
             //Classe de implementação acrescida de "service
