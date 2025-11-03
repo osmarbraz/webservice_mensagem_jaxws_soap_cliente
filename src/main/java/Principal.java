@@ -1,3 +1,4 @@
+
 import com.servico.MensagemServico;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -13,7 +14,7 @@ public class Principal {
     public static void main(String[] args) {
         try {
             //Especifica o endereço do servidor do serviço
-            URL url = new URL("http://localhost:8080/MensagemServico?wsdl");                        
+            URL url = new URL("http://localhost:8080/MensagemServico?wsdl");
             //Valores fornecidos pela WSDL
             //1o parâmetro usar valor do atributo namespace da tag binding\operation\input\soap do wsdl
             //Classe de implementação acrescida de "service
@@ -24,10 +25,11 @@ public class Principal {
             //Especifica o objeto pelo qual podemos invocar operações
             MensagemServico mensagemServico = servico.getPort(MensagemServico.class);
 
-            // Chamando os métodos remoto
-            mensagemServico.setMensagem("Teste");            
-            System.out.println(mensagemServico.getMensagem());
-            
+            // Chamando os métodos remotos
+            System.out.println("Mensagem anterior:" + mensagemServico.getMensagem());
+            mensagemServico.setMensagem("Teste");
+            System.out.println("Mensagem nova:" + mensagemServico.getMensagem());
+
         } catch (MalformedURLException mue) {
             System.out.println("Excecao :" + mue.getMessage());
         }
